@@ -7,9 +7,13 @@ import { AssignmentServiceService } from 'src/app/services/assignment-service.se
   styleUrls: ['./list-assignment.component.scss']
 })
 export class ListAssignmentComponent implements OnInit {
+  searchAssignments() {
+    throw new Error('Method not implemented.');
+  }
 
   data: any;
   end: any
+  searchTitle: string = '';
   constructor(private service: AssignmentServiceService) {
 
   }
@@ -28,5 +32,22 @@ export class ListAssignmentComponent implements OnInit {
       this.end = enddate;
     })
   }
+  search() {
+    if (this.searchTitle.trim() !== '') {
+      this.service.searchAssignments(this.searchTitle).subscribe(
+        (response: any[]) => { // Explicitly typing response as any[]
+          console.log('Search results:', response);
+          this.data = response;
+        },
+        (error: any) => { // Explicitly typing error as any
+          console.error('Error searching assignments:', error);
+        }
+      );
+    } else {
+      // If search title is empty, get all assignments
+      this.getData();
+    }
+  }
+
 
 }

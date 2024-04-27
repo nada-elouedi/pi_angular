@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AssignmentServiceService {
+  searchTitle: string = ''; searchResults: any[] = []; constructor(private _httpClient: HttpClient) {
 
-  constructor(private _httpClient: HttpClient) {
   }
 
   getList(): Observable<any> {
@@ -16,6 +16,12 @@ export class AssignmentServiceService {
   sortedAssignment(): Observable<any> {
     return this._httpClient.get("http://localhost:3000/assignments/sorted-by-end-date")
   }
+  searchAssignments(searchTitle: string): Observable<any[]> {
+    const searchTitleLowerCase = this.searchTitle.toLowerCase(); // Convert search term to lowercase
+
+    return this._httpClient.get<any[]>('http://localhost:3000/assignments/search?title=' + searchTitle);
+  }
+
 
 
 }

@@ -15,6 +15,21 @@
 </head>
 
 <body>
+    <!-- Filter Section -->
+    <div class="container-fluid py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Search by title" [(ngModel)]="searchTitle">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button" (click)="search()">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Courses Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
