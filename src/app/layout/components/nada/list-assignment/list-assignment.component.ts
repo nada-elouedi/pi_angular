@@ -27,16 +27,20 @@ export class ListAssignmentComponent implements OnInit {
     })
   }
   sortByEndDate(order: string) {
-    this.service.sortedAssignment(order).subscribe(
-      (enddate) => {
-        console.log(enddate);
-        this.end = enddate;
+    this.service.getAllAssignmentsOrderedByEndDate(order).subscribe(
+      (assignments) => {
+        console.log(assignments);
+        this.data = assignments; // Update assignments list with sorted data
+
+        // Update the assignments list in your component with the sorted data
       },
       (error) => {
         console.error('Error sorting assignments by end date:', error);
       }
     );
   }
+
+
 
   search() {
     if (this.searchTitle.trim() !== '') {
