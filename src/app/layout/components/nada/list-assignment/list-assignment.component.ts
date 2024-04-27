@@ -18,6 +18,7 @@ export class ListAssignmentComponent implements OnInit {
   getData() {
     this.service.getList().subscribe((res) => {
       console.log(res)
+      this.data = res;
     })
   }
 
