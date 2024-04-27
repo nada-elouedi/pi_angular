@@ -13,9 +13,12 @@ export class AssignmentServiceService {
   getList(): Observable<any> {
     return this._httpClient.get("http://localhost:3000/assignments/get_all")
   }
-  sortedAssignment(): Observable<any> {
-    return this._httpClient.get("http://localhost:3000/assignments/sorted-by-end-date")
+  sortedAssignment(order: string): Observable<any> {
+    // Define the API endpoint based on the sorting order
+    const endpoint = `http://localhost:3000/assignments/sorted-by-end-date?order=${order}`;
+    return this._httpClient.get(endpoint);
   }
+
   searchAssignments(searchTitle: string): Observable<any[]> {
     const searchTitleLowerCase = this.searchTitle.toLowerCase(); // Convert search term to lowercase
 
