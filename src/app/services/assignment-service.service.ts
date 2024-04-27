@@ -24,7 +24,9 @@ export class AssignmentServiceService {
 
     return this._httpClient.get<any[]>('http://localhost:3000/assignments/search?title=' + searchTitle);
   }
-
+  deleteAssignment(id: number): Observable<void> {
+    return this._httpClient.delete<void>(`http://localhost:3000/assignments/delete/${id}`);
+  }
 
 
 }

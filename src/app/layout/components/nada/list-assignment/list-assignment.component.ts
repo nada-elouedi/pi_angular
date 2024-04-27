@@ -41,6 +41,20 @@ export class ListAssignmentComponent implements OnInit {
   }
 
 
+  deleteAssignment(uuid: number) {
+    this.service.deleteAssignment(uuid).subscribe(
+      () => {
+        console.log(`Assignment with ID ${uuid} deleted successfully.`);
+
+        // Remove the deleted assignment from the data array
+        this.data = this.data.filter((assignment: any) => assignment.uuid !== uuid);
+      },
+      (error) => {
+        console.error(`Error deleting assignment with ID ${uuid}:`, error);
+      }
+    );
+  }
+
 
   search() {
     if (this.searchTitle.trim() !== '') {
