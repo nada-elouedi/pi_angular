@@ -4,7 +4,7 @@ import { ListAssignmentComponent } from './layout/components/nada/list-assignmen
 
 const routes: Routes = [
   {
-    path: 'la',
+    path: 'assignment',
     component: ListAssignmentComponent
   }
 ];

@@ -9,6 +9,7 @@ import { AssignmentServiceService } from 'src/app/services/assignment-service.se
 export class ListAssignmentComponent implements OnInit {
 
   data: any;
+  end: any
   constructor(private service: AssignmentServiceService) {
 
   }
@@ -19,6 +20,12 @@ export class ListAssignmentComponent implements OnInit {
     this.service.getList().subscribe((res) => {
       console.log(res)
       this.data = res;
+    })
+  }
+  getByEndDate() {
+    this.service.sortedAssignment().subscribe((enddate) => {
+      console.log(enddate)
+      this.end = enddate;
     })
   }
 

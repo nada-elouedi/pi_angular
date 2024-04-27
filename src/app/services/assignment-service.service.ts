@@ -13,4 +13,9 @@ export class AssignmentServiceService {
   getList(): Observable<any> {
     return this._httpClient.get("http://localhost:3000/assignments/get_all")
   }
+  sortedAssignment(): Observable<any> {
+    return this._httpClient.get("http://localhost:3000/assignments/sorted-by-end-date")
+  }
+
+
 }
