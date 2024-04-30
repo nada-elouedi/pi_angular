@@ -7,6 +7,7 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { ListAssignmentComponent } from './layout/components/nada/list-assignment/list-assignment.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CourseComponent } from './layout/components/course/course.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     FooterComponent,
     ListAssignmentComponent,
+    CourseComponent,
   ],
   imports: [
     BrowserModule,
