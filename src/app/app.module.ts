@@ -8,6 +8,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { ListAssignmentComponent } from './layout/components/nada/list-assignment/list-assignment.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CourseComponent } from './layout/components/course/course.component';
+import { FormsModule } from '@angular/forms'; // Import FormsModule
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { CourseComponent } from './layout/components/course/course.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [],
