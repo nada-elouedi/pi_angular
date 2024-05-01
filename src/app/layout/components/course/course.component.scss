@@ -1,0 +1,66 @@
+.form-container {
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 7px;
+  }
+  
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .input-control {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fd7e14;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #fd7e14;
+  }
+  /* Change card border color */
+.card {
+    border-color: #fd7e14 !important;
+  }
+  
+  /* Add margin to the card */
+  .card {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-right: 5px;
+    margin-left: 7px;
+  }
+  .course-row {
+    border-bottom: 2px solid #fd7e14; /* Change the color of the separating lines */
+  }
+  .card-body.text-secondary {
+    color: #000000; /* Adjust the color value to make it darker */
+}
+.custom-text-color {
+    color: #000000; /* Black color */
+}
+.card-body.text-success.custom-text-color {
+    color: #000000; /* Black color */
+}
+
+
+  
