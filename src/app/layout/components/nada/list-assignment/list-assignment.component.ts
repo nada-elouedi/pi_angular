@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AssignmentServiceService } from 'src/app/services/assignment-service.service';
+import { AssignmentServiceService } from 'src/app/services/Assignment/assignment-service.service';
 
 @Component({
   selector: 'app-list-assignment',

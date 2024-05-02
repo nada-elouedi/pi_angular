@@ -8,6 +8,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { ListAssignmentComponent } from './layout/components/nada/list-assignment/list-assignment.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { AddAssignmentComponent } from './layout/components/nada/list-assignment/addAssignment/add-assignment/add-assignment.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     FooterComponent,
     ListAssignmentComponent,
+    AddAssignmentComponent,
   ],
   imports: [
     BrowserModule,

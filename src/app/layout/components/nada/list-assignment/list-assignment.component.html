@@ -43,6 +43,12 @@
                 <div>
                     <button class="btn btn-primary" type="button" (click)="sortByEndDate('asc')">Sort Ascending</button>
 
+                    <button class="btn btn-primary" type="button" routerLink="/AddAssignement"
+                        style="margin-left: 10px;">Add
+                        assignment</button>
+
+
+
                 </div>
 
                 <div class="col-lg-4 col-md-6 mb-4" *ngFor="let assignment of data">
@@ -73,7 +79,7 @@
                                         </small>
                                     </div>
                                 </div>
-                                <h6 class="m-0">
+                                <h6 class="m-0" *ngIf="assignment.link">
                                     <i class="fas fa-link text-primary mr-2"></i>
                                     <small>{{ assignment.link }}</small>
                                 </h6>

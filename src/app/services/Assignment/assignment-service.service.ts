@@ -20,12 +20,14 @@ export class AssignmentServiceService {
 
 
   searchAssignments(searchTitle: string): Observable<any[]> {
-    const searchTitleLowerCase = this.searchTitle.toLowerCase(); // Convert search term to lowercase
-
-    return this._httpClient.get<any[]>('http://localhost:3000/assignments/search?title=' + searchTitle);
+    const searchTitleLowerCase = searchTitle.toLowerCase(); // Utiliser le paramètre searchTitle
+    return this._httpClient.get<any[]>('http://localhost:3000/assignments/search?title=' + searchTitleLowerCase);
   }
   deleteAssignment(id: number): Observable<void> {
     return this._httpClient.delete<void>(`http://localhost:3000/assignments/delete/${id}`);
+  }
+  createAssignment(assignmentData: any): Observable<any> {
+    return this._httpClient.post<any>('http://localhost:3000/assignments/create', assignmentData);
   }
 
 
