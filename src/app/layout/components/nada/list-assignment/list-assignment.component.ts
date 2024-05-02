@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AssignmentServiceService } from 'src/app/services/Assignment/assignment-service.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class ListAssignmentComponent implements OnInit {
   data: any;
   end: any
   searchTitle: string = '';
-  constructor(private service: AssignmentServiceService) {
+  constructor(private service: AssignmentServiceService, private router: Router) {
 
   }
   ngOnInit(): void {
@@ -39,7 +40,9 @@ export class ListAssignmentComponent implements OnInit {
       }
     );
   }
-
+  showAssignmentDetails(assignmentId: number) {
+    this.router.navigate(['/assignment', assignmentId]); // Remplacez '/assignment' par le chemin de votre route pour les détails de l'assignment
+  }
 
   deleteAssignment(uuid: number) {
     this.service.deleteAssignment(uuid).subscribe(

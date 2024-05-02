@@ -9,6 +9,7 @@ import { ListAssignmentComponent } from './layout/components/nada/list-assignmen
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AddAssignmentComponent } from './layout/components/nada/list-assignment/addAssignment/add-assignment/add-assignment.component';
+import { DetailsAssignmentComponent } from './layout/components/nada/Details/details-assignment/details-assignment.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { AddAssignmentComponent } from './layout/components/nada/list-assignment
     FooterComponent,
     ListAssignmentComponent,
     AddAssignmentComponent,
+    DetailsAssignmentComponent,
   ],
   imports: [
     BrowserModule,

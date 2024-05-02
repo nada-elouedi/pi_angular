@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ECOURSES - Online Courses HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Assignments</h5>
+            <h1>Assignment Details</h1>
+        </div>
+        <div class="container-fluid py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card mt-5">
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="m-0">{{ assignment.type }}</h5>
+
+                                <a class="h5">{{ assignment.title }}</a>
+                            </div>
+
+                        </div>
+                        <div class="card-body">
+
+
+
+                            <div>
+                                <small class="m-0">
+                                    <i class="far fa-clock text-primary mr-2"> Begin at:</i> {{
+                                    assignment.start_date | date:'EEEE, MMMM d, y - HH:mm' }}
+                                </small>
+                            </div>
+                            <div>
+                                <small class="m-0">
+                                    <i class="far fa-clock text-primary mr-2"> Due at:</i> {{
+                                    assignment.end_date | date:'EEEE, MMMM d, y - HH:mm' }}
+                                </small>
+                            </div>
+                            <div *ngIf="assignment.description">
+                                <label>Description:</label>
+                                <small class="m-0">
+                                    {{ assignment.description }}
+                                </small>
+                            </div>
+                            <h6 class="m-0" *ngIf="assignment.link">
+                                <i class="fas fa-link text-primary mr-2"></i>
+                                <small>{{ assignment.link }}</small>
+                            </h6>
+
+                            <button class="btn btn-danger btn-sm" style="margin-left: 10px;">Add report</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

@@ -17,6 +17,9 @@ export class AssignmentServiceService {
   getAllAssignmentsOrderedByEndDate(order: string): Observable<any> {
     return this._httpClient.get(`http://localhost:3000/assignments/sorted-by-end-date?order=${order}`);
   }
+  getAssignmentById(id: number): Observable<any> {
+    return this._httpClient.get<any>(`http://localhost:3000/assignments/${id}`);
+  }
 
 
   searchAssignments(searchTitle: string): Observable<any[]> {

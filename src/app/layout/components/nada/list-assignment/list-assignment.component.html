@@ -68,7 +68,7 @@
                                         assignment.start_date | date:'EEEE, MMMM d, y - HH:mm' }}
                                     </small>
                                 </div>
-                                <small class="m-0">
+                                <small class="m-0" *ngIf="assignment.description">
                                     {{ assignment.description }}
                                 </small>
                                 <div class="d-flex justify-content-between mb-3">
@@ -83,8 +83,10 @@
                                     <i class="fas fa-link text-primary mr-2"></i>
                                     <small>{{ assignment.link }}</small>
                                 </h6>
-                                <button class="btn btn-danger"
+                                <button class="btn btn-danger btn-sm"
                                     (click)="deleteAssignment(assignment.uuid)">Delete</button>
+                                <button class="btn btn-danger btn-sm" style="margin-left: 10px;"
+                                    (click)="showAssignmentDetails(assignment.uuid)">consult </button>
 
                             </div>
                         </div>
