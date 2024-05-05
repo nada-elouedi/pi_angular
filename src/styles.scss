@@ -11152,3 +11152,32 @@ h6,
     padding: 0;
     list-style-type: none;
 }
+// Your existing SCSS styles...
+
+.btn-like {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    .fa-thumbs-up {
+      margin-right: 5px;
+    }
+  
+    &:hover {
+      background-color: #0056b3;
+    }
+  
+    &:active {
+      animation: bounce 0.5s;
+    }
+  
+    &.liked {
+      color: green;
+    }
+  }
+  

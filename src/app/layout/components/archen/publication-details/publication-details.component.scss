@@ -1,0 +1,68 @@
+/* Keyframes */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Comment box */
+.comment-box {
+    padding: 20px; /* Adjust as needed */
+}
+
+/* Comment content */
+.comment-content {
+    font-size: 16px; /* Adjust as needed */
+}
+
+/* Comment and reply user names */
+.comment-user,
+.reply-user {
+    font-size: 25px; /* Adjust as needed */
+    font-weight: bold; /* Adjust as needed */
+    margin-bottom: 3px;
+}
+
+/* Date in media body */
+.media-body small {
+    font-size: 14px; /* Adjust as needed */
+    font-style: italic;
+}
+
+/* Replies */
+.replies {
+    padding-left: 35px; /* Adjust as needed */
+    padding-top: 7px; /* Adjust as needed */
+    padding-bottom: 5px; /* Adjust as needed */
+}
+
+/* Image fluid */
+.img-fluid {
+    width: 80px; /* Adjust as needed */
+}
+
+/* Heading 4 */
+h4 {
+    font-size: 24px; /* Adjust as needed */
+    font-weight: bold; /* Adjust as needed */
+    margin-bottom: 5px;
+}
+
+/* Text left alignment */
+.text-left {
+    text-align: left;
+    font-size: 22px; /* Adjust as needed */
+}
+
+/* Delete button */
+.delete-button {
+    text-align: right;
+    font-size: 8px;
+    opacity: 0.5;
+}

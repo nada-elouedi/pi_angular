@@ -1,0 +1,44 @@
+<div class="container-fluid py-5">
+  <div class="container py-5">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>User name</th>
+          <th>Classroom</th>
+          <th>Title</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Profanity Check</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let publication of publications; let i = index;">
+          <td>{{ publication.user.name }}</td>
+          <td>{{ publication.classroom.name }}</td>
+          <td>{{ publication.title }}</td>
+          <td>{{ publication.date | date:'mediumDate' }}</td>
+          <td>
+            <span [ngClass]="{'text-success': publication.verified, 'text-warning': !publication.verified}">
+              {{ publication.verified ? 'Verified' : 'Pending Approval' }}
+            </span>
+          </td>
+          <td>
+            <span [ngClass]="{'text-danger': publication.badWords === 'Profanity', 'text-success': publication.badWords === 'Clean'}">
+              {{ publication.badWords }}
+            </span>
+          </td>
+          <td>{{ publication.description }}</td>
+          <td>
+            <div class="d-flex">
+              <a href="" class="btn btn-primary btn-sm font-weight-semi-bold mr-2" (click)="deletePublication(publication.uuid)">Delete</a>
+              <a *ngIf="!publication.verified" href="" class="btn btn-primary btn-sm font-weight-semi-bold" (click)="verifyPublication(publication.uuid)">Verify</a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="container">
+    <h2>Publication Pending Approval</h2>
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">Your publication is pending approval from the admins.</h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text">
+          You will be notified once it's approved. Below is the information of the post you have just added:
+        </p>
+        <div class="publication-details">
+          <p><strong>Title:</strong> {{ latestPublication?.title }}</p>
+          <p><strong>Description:</strong> {{ latestPublication?.description }}</p>
+          <p><strong>Category:</strong> {{ latestPublication?.pubCategory }}</p>
+        </div>
+        <a routerLink="/publications-list" class="btn btn-primary btn-sm font-weight-semi-bold mr-2">View Publications<span>&#43;</span></a>
+    </div>
+    </div>
+  </div>
+  

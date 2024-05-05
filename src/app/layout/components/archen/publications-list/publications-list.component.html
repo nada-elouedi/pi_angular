@@ -1,0 +1,74 @@
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row pb-3">
+                    <div class="col-lg-6 mb-4" *ngFor="let publication of filteredPublications">
+                        <div class="blog-item position-relative overflow-hidden rounded mb-2">
+                            <img class="img-fluid" src="assets/img/blog-1.jpg" alt="">
+                            <a class="blog-overlay text-decoration-none" [routerLink]="['/publication', publication.uuid]">
+                                <h5 class="text-white mb-1">Title: {{ publication.title }}</h5>
+                                <p class="text-primary m-0">Date : {{ publication.date | date:'mediumDate' }}</p>
+                                <p class="text-primary m-0">Category:  {{ publication.pubCategory }}</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mt-5 mt-lg-0">
+                <!-- Author Bio -->
+                <div class="d-flex flex-column text-center bg-dark rounded mb-5 py-5 px-4">
+                    <img src="assets/img/tate.png" class="img-fluid rounded-circle mx-auto mb-3" style="width: 100px;">
+                    <h3 class="text-primary mb-3">BREATHE AIR !</h3>
+                    <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Tag Cloud</h3>
+                    <p class="text-white m-0">You don't neeeeed a vape !</p>
+                    <a routerLink="/publication/add" class="btn btn-primary btn-sm font-weight-semi-bold mr-2">Create post <span>&#43;</span></a>
+                </div>
+
+                <div class="mb-5">
+                    <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Categories</h3>
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                        <a href="javascript:void(0)" class="text-decoration-none h6 m-0" (click)="filterPublicationsByCategory('General')">General</a>
+                        <span class="badge badge-primary badge-pill">12</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                        <a href="javascript:void(0)" class="text-decoration-none h6 m-0" (click)="filterPublicationsByCategory('Discussion')">Discussion</a>
+                        <span class="badge badge-primary badge-pill">15</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                        <a href="javascript:void(0)" class="text-decoration-none h6 m-0" (click)="filterPublicationsByCategory('Debate')">Debate</a>
+                        <span class="badge badge-primary badge-pill">1</span>
+                    </li>
+                </div>
+                
+
+                <!-- Search Form -->
+                <div class="mb-5">
+                    <form>
+                        <div class="input-group">
+                            <input type="text" class="form-control form-control-lg" placeholder="Keyword" [(ngModel)]="searchKeyword" name="searchKeyword">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button" (click)="searchPublications()"><i class="fa fa-search"></i> Search</button>
+                            </div>
+                        </div>
+                    </form>
+                    <button class="btn btn-secondary mt-2" (click)="resetSearch()">Reset</button>
+                </div>
+
+               
+               <!-- Recent Post -->
+<div class="mb-5">
+    <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Recent Post</h3>
+    <a *ngIf="findMostRecentPublication()" class="d-flex align-items-center text-decoration-none mb-3" [routerLink]="'/publication/' + findMostRecentPublication().uuid">
+        <img class="img-fluid rounded" src="assets\img\blog-80x80.jpg" alt="">
+        <div class="pl-3">
+            <h6 class="m-1">{{ findMostRecentPublication().title }}</h6>
+            <small>{{ findMostRecentPublication().date | date:'MMM dd, yyyy' }}</small>
+        </div>
+    </a>
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>
