@@ -6,6 +6,7 @@ import { PublicationAdminComponent } from './layout/components/archen/publicatio
 import { PublicationAddComponent } from './publication-add/publication-add.component';
 import { PublicationPendingComponent } from './layout/components/archen/publication-pending/publication-pending.component';
 import { PublicationDetailsComponent } from './layout/components/archen/publication-details/publication-details.component';
+import { PublicationModifyComponent } from './layout/components/archen/publication-modify/publication-modify.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,7 @@ const routes: Routes = [
     component: PublicationPendingComponent 
   },
   { path: 'publication/:uuid', component: PublicationDetailsComponent },
+  { path: 'publication-modify/:uuid', component: PublicationModifyComponent },
 ];
 
 @NgModule({

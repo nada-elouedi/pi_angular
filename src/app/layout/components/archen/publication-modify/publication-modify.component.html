@@ -1,1 +1,15 @@
-<p>publication-modify works!</p>
+<!-- Modify Publication HTML -->
+<div class="container py-5">
+    <h2 class="mb-4">Modify Publication</h2>
+    <form (ngSubmit)="submitForm()">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" name="title" [(ngModel)]="publication.title" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" name="description" [(ngModel)]="publication.description" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

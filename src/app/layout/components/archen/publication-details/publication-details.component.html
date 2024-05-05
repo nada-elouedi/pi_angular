@@ -1,21 +1,26 @@
 
 <div class="container-fluid py-5">
     <div class="container py-5">
-       <!-- Publication details -->
+<!-- Publication details -->
 <div class="row justify-content-center">
-    <div class="col-lg-8">
+    <div class="col-lg-8">        
         <div class="d-flex align-items-center mb-3">
             <img src="assets/img/user.jpg" alt="Image" class="img-fluid rounded-circle mr-3 mt-1" style="width: 60px;">
             <div>
-                <h4>{{ publication.user.name }} <small><i>{{ publication.date | date: 'dd/MM/yyyy HH:mm:ss' }}</i></small></h4>
+                <h4>{{ publication.user?.name }} <small><i>{{ publication.date | date: 'dd/MM/yyyy HH:mm:ss' }}</i></small></h4>
             </div>
         </div>
         <div class="text-left">
             <h1 class="mb-5">{{ publication.title }}</h1>
             <p style="font-size: 20px;">{{ publication.description }}</p>
-        </div><nav></nav>
+        </div>
+        <nav>
+            <a class="btn btn-primary mr-2" [routerLink]="['/publication-modify', publication.uuid]">Edit</a>
+        </nav>
     </div>
 </div>
+
+
 
 
 <!-- Like feature -->
