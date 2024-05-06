@@ -1,0 +1,44 @@
+<div class="container-fluid py-5">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="row pb-3">
+          <div class="col-lg-6 mb-4" *ngFor="let reclamation of reclamations">
+            <div class="blog-item position-relative overflow-hidden rounded mb-2">
+              <img class="img-fluid" src="assets/img/reclamation-850.jpg" alt="">
+              <!-- Add routerLink directive to navigate to ReclamationInfoComponent with reclamation ID -->
+              <a class="blog-overlay text-decoration-none" [routerLink]="['/reclamation', reclamation.uuid]">
+                <h5 class="text-white mb-3">{{ reclamation.title }}</h5>
+                <p class="text-primary m-0">{{ reclamation.content }}</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mt-5 mt-lg-0">
+        <!-- Search Form -->
+        <div class="mb-5">
+          <div class="input-group">
+            <input type="text" class="form-control form-control-lg" placeholder="Search by title" [(ngModel)]="searchKeyword">
+            <div class="input-group-append">
+              <button class="btn btn-primary" (click)="searchReclamationsByTitleAndUuid()">Search</button>
+            </div>
+          </div>
+        </div>
+        <!-- Category List -->
+        <div class="mb-5">
+          <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Categories</h3>
+          <ul class="list-group list-group-flush">
+            <!-- Add category list items if needed -->
+          </ul>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-secondary" (click)="sortReclamationsByDateForUser()">Sort by Newest</button>
+          <!-- Button to fetch recent reclamations -->
+          <button class="btn btn-secondary" (click)="getRecentReclamations(10)">Get Recent Reclamations</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

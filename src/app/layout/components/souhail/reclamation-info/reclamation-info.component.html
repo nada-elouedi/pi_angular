@@ -1,0 +1,31 @@
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-5">
+                <!-- Image -->
+                <img class="img-fluid rounded mb-4 mb-lg-0" src="assets/img/reclamation-850.jpg" alt="About Image">
+            </div>
+            <div class="col-lg-7">
+                <!-- Content -->
+                <div class="text-left mb-4">
+                    <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Reclamation Details</h5>
+                    <!-- Reclamation Info -->
+                    <div *ngIf="reclamation" class="border p-3 rounded">
+                        <div class="bg-light p-3 rounded mb-3">
+                            <h2 class="mb-0">{{ reclamation.title }}</h2>
+                        </div>
+                        <div class="bg-light p-3 rounded mb-3">
+                            <p class="mb-0">{{ reclamation.content }}</p>
+                        </div>
+                        <div class="text-muted mb-3">
+                            <small>Date: {{ reclamation.date | date: 'MMMM d, y, h:mm a' }}</small>
+                        </div>
+                        <!-- Edit Button -->
+                        <button class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2" (click)="navigateToEditPage()">Edit</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

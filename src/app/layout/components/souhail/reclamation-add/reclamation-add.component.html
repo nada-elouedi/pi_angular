@@ -1,0 +1,32 @@
+<div class="container-fluid py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8"> <!-- Adjusted column width for better spacing -->
+          <div class="contact-form bg-secondary rounded p-5">
+            <div id="success"></div>
+            <form name="sentMessage" id="contactForm" (submit)="submitForm()" novalidate>
+              <div class="form-group"> <!-- Added form-group class for better spacing -->
+                <label for="title" class="text-white">Title</label>
+                <input type="text" class="form-control border-0 p-4" id="title" name="title" [(ngModel)]="formValue.title" placeholder="Title" required>
+                <p class="help-block text-danger" *ngIf="!formValue.title?.trim()">Title is required</p>
+              </div>
+              <div class="form-group"> <!-- Added form-group class for better spacing -->
+                <label for="content" class="text-white">Content</label>
+                <textarea class="form-control border-0 py-3 px-4" rows="5" id="content" name="content" [(ngModel)]="formValue.content" placeholder="Content" required></textarea>
+                <p class="help-block text-danger" *ngIf="!formValue.content?.trim()">Content is required</p>
+              </div>
+              <div class="form-group"> <!-- Added form-group class for better spacing -->
+                <label for="date" class="text-white">Date</label>
+                <input type="date" class="form-control border-0 p-4" id="date" name="date" [(ngModel)]="formValue.date" required>
+                <p class="help-block text-danger" *ngIf="!formValue.date">Date is required</p>
+              </div>
+              <div class="text-center">
+                <button class="btn btn-primary py-3 px-5" type="submit">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

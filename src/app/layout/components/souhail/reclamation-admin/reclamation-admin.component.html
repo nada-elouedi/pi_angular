@@ -1,0 +1,36 @@
+<div class="container-fluid py-5">
+  <div class="container py-5">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>User name</th>
+          <th>Classroom</th>
+          <th>Title</th>
+          <th>Content</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reclamation of reclamations; let i = index;">
+          <td>{{ reclamation.userName }}</td>
+          <td>{{ reclamation.classroom }}</td>
+          <td>{{ reclamation.title }}</td>
+          <td>{{ reclamation.content }}</td>
+          <td>{{ reclamation.date | date:'mediumDate' }}</td>
+          <td>
+            <span [ngClass]="{'text-success': reclamation.verified, 'text-warning': !reclamation.verified}">
+              {{ reclamation.verified ? 'Verified' : 'Waiting for Reply' }}
+            </span>
+          </td>
+          <td>
+            <!-- Modify the button to use routerLink directive -->
+            <a class="btn btn-primary btn-sm" [routerLink]="['/reclamation/check', reclamation.uuid]">Check</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+  </div>
+</div>

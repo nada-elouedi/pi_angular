@@ -1,0 +1,43 @@
+<div class="container-fluid py-5">
+    <div class="container">
+      <!-- Reclamation Details -->
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="border bg-light rounded p-3 mb-3">
+            <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Reclamation Details</h5>
+            <div class="mb-3">
+              <strong>Title:</strong> {{ reclamation.title }}
+            </div>
+            <div class="mb-3">
+              <strong>Content:</strong> {{ reclamation.content }}
+            </div>
+            <div class="mb-3">
+              <strong>Date:</strong> {{ reclamation.date | date: 'MMMM d, y, h:mm a' }}
+            </div>
+            <!-- Add more reclamation details as needed -->
+          </div>
+        </div>
+      </div>
+  
+      <!-- Response Form -->
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="contact-form bg-secondary rounded p-5">
+            <div id="success"></div>
+            <form name="responseForm" id="responseForm" (submit)="submitResponse()" novalidate>
+              <div class="form-group">
+                <label for="response" class="text-white">Response</label>
+                <textarea class="form-control border-0 py-3 px-4" rows="5" id="response" name="response" [(ngModel)]="responseContent" placeholder="Response" required></textarea>
+                <p class="help-block text-danger" *ngIf="!responseContent?.trim()">Response is required</p>
+              </div>
+              <div class="text-center">
+                <button class="btn btn-primary py-3 px-5" type="submit">Submit</button>
+                <button class="btn btn-primary py-3 px-5" type="">Upload</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
