@@ -1,0 +1,67 @@
+<div class="container-fluid py-5">
+  <div class="container py-5">
+    <div class="text-center mb-5">
+      <h1>Add your classroom</h1>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="contact-form bg-secondary rounded p-5">
+          <div id="success"></div>
+          <form #classroomForm="ngForm" (ngSubmit)="onSubmit(classroomForm)">
+            <div class="control-group">
+              <input
+                type="text"
+                class="form-control border-0 p-4"
+                id="name"
+                placeholder="Classroom Name"
+                required
+                [(ngModel)]="classroom.name"
+                name="name"
+              />
+              <div
+                *ngIf="
+                  classroomForm.submitted &&
+                  classroomForm.controls['name'].invalid
+                "
+                class="text-danger"
+              >
+                Classroom Name is required.
+              </div>
+            </div>
+
+            <div class="control-group">
+              <textarea
+                class="form-control border-0 py-3 px-4"
+                rows="5"
+                id="description"
+                placeholder="Description"
+                required
+                [(ngModel)]="classroom.description"
+                name="description"
+              ></textarea>
+              <div
+                *ngIf="
+                  classroomForm.submitted &&
+                  classroomForm.controls['description'].invalid
+                "
+                class="text-danger"
+              >
+                Description is required.
+              </div>
+            </div>
+            <div class="text-center">
+              <button
+                class="btn btn-primary py-3 px-5"
+                type="submit"
+                id="sendMessageButton"
+                routerLink="/classrooms"
+              >
+                Create classroom
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
