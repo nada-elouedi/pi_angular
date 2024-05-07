@@ -1,6 +1,6 @@
   
   <tr *ngFor="let course of courses"> 
-    <div class="card border-success mb-3" style="max-width: 18rem;">
+    <!--<div class="card border-success mb-3" style="max-width: 18rem;">
         <div class="card-header bg-transparent border-success">{{ course.title }}</div>
         <div class="card-body text-success">
           <h5 class="card-title">{{ course.description }}</h5>
@@ -10,7 +10,7 @@
           </li>
         </div>
         <div class="card-footer bg-transparent border-success">{{ course.date }}</div>
-      </div>
+      </div>-->
       <div class="card border-secondary mb-3" style="max-width: 18rem;">
         <div class="card-header">{{ course.title }}</div>
         <div class="card-body text-success custom-text-color">
@@ -21,7 +21,8 @@
                     <a href="{{ file.url }}" target="_blank">{{ file.name }}</a>
                 </li>
             </ul>
-            
+            <button class="btn btn-primary" (click)="navigateToUpdate()">Update</button>
+
         </div>
     </div>
     

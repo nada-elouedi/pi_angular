@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CourseServiceService } from 'src/app/services/course-service.service';
 
 @Component({
@@ -9,19 +10,19 @@ import { CourseServiceService } from 'src/app/services/course-service.service';
 export class CourseComponent implements OnInit {
   newCourse: any = {};
   courses : any;
-  constructor(private servicecourse:CourseServiceService ){}
-  getCourse(){
-    this.servicecourse.getCourse().subscribe((courses) => {
+  @Input() course: any; 
+  constructor(private router: Router,private servicecourse:CourseServiceService ){}
+  getCourses(){
+    this.servicecourse.getCourses().subscribe((courses) => {
       console.log(courses)
     })
   }
   
-
   ngOnInit(){
-    this.servicecourse.getCourse().subscribe(data=>{
+    this.servicecourse.getCourses().subscribe(data=>{
       console.log(data);
       this.courses=data;
-      this.getCourse();
+      this.getCourses();
     })
   }
 
@@ -29,9 +30,11 @@ export class CourseComponent implements OnInit {
     this.servicecourse.addCourse(this.newCourse).subscribe(() => {
       console.log('Course added successfully');
       this.newCourse = {}; // Reset the form fields
-      this.getCourse(); // Refresh the list of courses after adding
+      this.getCourses(); // Refresh the list of courses after adding
     });
   }
-
+  navigateToUpdate() {
+    this.router.navigate(['/update-course', this.course.id]); // Assuming you have the course ID
+  }
 
 }

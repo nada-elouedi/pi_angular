@@ -8,7 +8,8 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { ListAssignmentComponent } from './layout/components/nada/list-assignment/list-assignment.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CourseComponent } from './layout/components/course/course.component';
-import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { FormsModule } from '@angular/forms';
+import { UpdateCourseComponent } from './update-course/update-course.component'; // Import FormsModule
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { FormsModule } from '@angular/forms'; // Import FormsModule
     FooterComponent,
     ListAssignmentComponent,
     CourseComponent,
+    UpdateCourseComponent,
   ],
   imports: [
     BrowserModule,
