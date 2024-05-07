@@ -15,7 +15,8 @@ export class AddAssignmentComponent implements OnInit {
     end_date: '',
     link: '',
     description: '',
-    type: ''
+    type: '',
+    status: 'Up_Coming'
   };
   currentDate: Date = new Date();
   errorMessage: string = '';
@@ -61,7 +62,8 @@ export class AddAssignmentComponent implements OnInit {
           end_date: '',
           link: '',
           description: '',
-          type: ''
+          type: '',
+          status: 'Up_Coming'
         };
         this.router.navigate(['/assignment']);
       },
