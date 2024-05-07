@@ -1,0 +1,6 @@
+<form [formGroup]="meetingForm" (ngSubmit)="onSubmit()">
+  <input type="text" formControlName="title" placeholder="Title">
+  <input type="date" formControlName="date" placeholder="Date">
+  <input type="text" formControlName="link" placeholder="Link">
+  <button type="submit">Add Meeting</button>
+</form>
